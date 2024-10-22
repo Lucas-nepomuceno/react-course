@@ -1,37 +1,7 @@
-import reactImg from './assets/react-core-concepts.png'
 import { CORE_CONCEPTS } from './data';
-
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-const reactCharacteristics = ['aspects', 'characteristics', 'parts', 'properties'];
-
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const description = reactDescriptions[genRandomInt(2)]
-  const characteristics = reactCharacteristics[genRandomInt(2)]
-
-  return (<header>
-    <img src={reactImg} alt="Stylized atom" />
-    <h1>React Essentials</h1>
-    <p>
-      {description} React {characteristics} you will need for almost any app you are
-      going to build!
-    </p>
-  </header>)
-} 
-
-function Component({image, title, description}) {
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  )
-}
+import Header from './components/Header/Header.jsx';
+import Component from './components/Component.jsx';
+import TabButton from './components/TabButton.jsx';
 
 function App() {
   return (
@@ -49,6 +19,16 @@ function App() {
             
           </ul>
         
+        </section>
+        <section id='examples'>
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>States</TabButton>
+
+          </menu>
         </section>
       </main>
     </div>
