@@ -4,6 +4,10 @@ import Component from './components/Component.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  function handleSelect(selectedButton) {
+    console.log('Hello, Button! - ' + selectedButton)
+  }
+
   return (
     <div>
       <Header/>
@@ -23,10 +27,10 @@ function App() {
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>States</TabButton>
+            <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('states')}>States</TabButton>
 
           </menu>
         </section>
